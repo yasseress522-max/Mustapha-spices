@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عطارة أبو حفص</title>
+    <title>عطارة أبو يوسف</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
@@ -46,9 +46,11 @@
     <header class="bg-white border-b-2 border-burgundy/20 shadow-sm mb-6">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-right">
             <div class="flex items-center gap-3">
-                
+                <span class="w-11 h-11 rounded-xl bg-sand border border-burgundy/25 flex items-center justify-center text-burgundy text-xl shrink-0">
+                    <i class="fa-solid fa-mortar-pestle"></i>
+                </span>
                 <h1 id="header-store-name" class="text-2xl sm:text-3xl font-extrabold text-darkbrown">
-                    عطارة أبو حفص
+                    عطارة أبو يوسف
                 </h1>
             </div>
             <a id="header-wa-ask" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-olive hover:bg-oliveHover text-white text-base sm:text-lg font-extrabold py-3 px-6 rounded-xl shadow-sm transition-colors">
@@ -58,7 +60,7 @@
         </div>
     </header>
 
-    <!-- 80-Item Grid (2 Columns) -->
+    <!-- 2-Column Wholesale Grid (80 Items) -->
     <main class="max-w-4xl mx-auto px-3 sm:px-6">
         <div id="products-grid" class="grid grid-cols-2 gap-3.5 sm:gap-6"></div>
     </main>
@@ -93,13 +95,13 @@
 
             <div class="pt-4 border-t border-burgundy/15 text-sm sm:text-base font-bold text-darkbrown/75">
                 <p>
-                    &copy; <span id="copyright-year">2026</span> <span id="footer-store-name">عطارة أبو حفص</span> - جميع الحقوق محفوظة.
+                    &copy; <span id="copyright-year">2026</span> <span id="footer-store-name">عطارة أبو يوسف</span> - جميع الحقوق محفوظة.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Enlarged Image Modal -->
     <div id="image-modal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-50 hidden bg-darkbrown/85 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden border-2 border-burgundy shadow-2xl modal-box" onclick="event.stopPropagation()">
             <div class="flex items-center justify-between px-4 py-3 bg-sand border-b border-burgundy/20">
@@ -131,12 +133,12 @@
     </div>
 
     <script>
-        // Store and WhatsApp configuration
-        const STORE_NAME = "عطارة أبو حفص";
+        // Store settings (edit store name and WhatsApp number here)
+        const STORE_NAME = "عطارة أبو يوسف";
         const WHATSAPP_NUMBER = "212600000000";
         const DISPLAY_PHONE = "+212 600 000 000";
 
-        // 80 items list (edit name, price, and image URL per item)
+        // 80 items (edit name, price, and image per item)
         const PRODUCTS = [
             { id: 1,  name: "•••", price: "---", image: "" },
             { id: 2,  name: "•••", price: "---", image: "" },
@@ -220,7 +222,6 @@
             { id: 80, name: "•••", price: "---", image: "" }
         ];
 
-        // Resolve relative or absolute image path to a full URL
         function resolveImageUrl(path) {
             if (!path || !path.trim()) return "";
             try {
@@ -230,7 +231,6 @@
             }
         }
 
-        // Render all 80 product cards
         function renderProducts(cleanPhone) {
             const grid = document.getElementById("products-grid");
             if (!grid) return;
@@ -287,7 +287,6 @@
             });
         }
 
-        // Open lightbox modal for selected item
         function openImageModal(id) {
             try {
                 const item = PRODUCTS.find((p) => p.id === id);
@@ -335,7 +334,6 @@
             if (event.key === "Escape") closeImageModal();
         });
 
-        // Initialize store info, WhatsApp links, and grid
         function initCatalog() {
             try {
                 const cleanPhone = WHATSAPP_NUMBER.replace(/[^0-9]/g, "");
